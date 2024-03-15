@@ -1,0 +1,48 @@
+<header class="container-fluid bg-black d-flex justify-space-between text-white w-100 align-items-center" responsive>
+  <div>
+    <a routerLink="/"><img src="https://includeability.gov.au/sites/default/files/2021-08/Kmart_Flat_MASTERBRAND_CMYK_800.jpg" alt="" class="h-25 w-25"></a>
+  </div>
+
+  <div class="container">
+    <input type="text" [(ngModel)]="searchQuery" (input)="searchProducts()" class="input" placeholder="Search products...">
+    <button class="search__btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+        <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="#efeff1"></path>
+      </svg>
+    </button>
+  </div>
+  <button class="hamburger-menu" (click)="toggleMenu()"> 
+    <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="#eee" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round" style="cursor: pointer">
+      <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+        <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
+        <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
+      </path>
+      <rect width="10" height="10" stroke="none">
+        <animate dur="2s" id="reverse" attributeName="width" begin="click" />
+      </rect>
+      <rect width="10" height="10" stroke="none">
+        <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
+        <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
+      </rect>
+    </svg>
+  </button> 
+  <div class="intro" [ngClass]="{'menu-open': isMenuOpen}">
+  <ul class="d-flex justify-space-between align-items-center w-100 list-unstyled gap-2">
+    <li><a routerLink="/" class="text-white text-decoration-none">Home</a></li>
+    <li><a routerLink="/about" class="text-white text-decoration-none">About</a></li>
+    <li><a routerLink="/products" class="text-white text-decoration-none">Products</a></li>
+    <li><a routerLink="/contact" class="text-white text-decoration-none">Contact</a></li>
+    <app-dark-mode (darkModeChange)="onDarkModeChange($event)" padding-right:1px></app-dark-mode>
+    <div class="cart-icon">
+      <a routerLink="cart"><i class="bi bi-cart text-white"></i></a>
+      <span id="count">{{ c }}</span>
+    </div> 
+  </ul>
+</div>
+  <div>
+    <button class="btn btn-primary">
+      <a routerLink="/login" class="text-white text-decoration-none">Login</a>
+    </button>
+  </div>
+</header>
+

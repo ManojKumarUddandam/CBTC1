@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+@import url('../node_modules/bootstrap-icons/font/bootstrap-icons.css');
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  body.light-mode {
+    background-color: #fff;
+    color: #000;
+  }
+  

@@ -1,0 +1,203 @@
+.container-fluid {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  color: white;
+}
+
+.container-fluid img {
+  height: 25px;
+  width: 25px;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end; /* Adjusted to align items to the end */
+  align-items: center;
+  list-style: none;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0 15px; /* Added padding to improve spacing */
+}
+
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon .bi-cart {
+  position: relative;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+}
+
+.input {
+  max-width: 190px;
+  height: 100%;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #53535f;
+  caret-color: #f7f7f8;
+  color: #fff;
+  padding: 7px 10px;
+  border: 2px solid transparent;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  margin-right: 1px;
+  transition: all .2s ease;
+}
+
+.input:hover {
+  border: 2px solid rgba(255, 255, 255, 0.16);
+}
+
+.input:focus {
+  border: 2px solid #a970ff;
+  background-color: #0e0e10;
+}
+
+.search__btn {
+  border: none;
+  cursor: pointer;
+  background-color: rgba(42, 42, 45, 1);
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  height: 100%;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search__btn:hover {
+  background-color: rgba(54, 54, 56, 1);
+}
+
+.hamburger-menu {
+  display: none; /* Hide hamburger icon by default */
+  cursor: pointer;
+}
+  
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .container-fluid {
+    height: 60px; /* Reduce height for mobile devices */
+  }
+
+  .container-fluid img {
+    height: 40px;
+    width: 40px; /* Reduce image size for mobile devices */
+    margin-left: 5px;
+    
+  }
+
+  ul {
+    justify-content: center; /* Center-align navigation items for mobile devices */
+  }
+
+  ul li a {
+    padding: 0 10px; /* Reduce padding for mobile devices */
+  }
+
+  .btn-primary {
+    margin-right: 10px; /* Reduce margin for mobile devices */
+  }
+
+  .input {
+    max-width: 140px; /* Reduced max-width for mobile devices */
+    font-size: 12px; /* Reduced font size for mobile devices */
+    padding: 5px 8px; /* Reduced padding for mobile devices */
+  }
+
+  .search__btn {
+    width: 25px; /* Reduced width for mobile devices */
+  }
+
+  /* Add styles for the active state of the menu */
+  .hamburger-menu.active + .menu-open {
+    visibility: visible;
+    opacity: 1;
+  }
+  .hamburger-menu {
+    display: block; /* Display the hamburger icon on mobile */
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin-right: 70px;
+  }
+
+  /* Hide menu links by default */
+  .intro {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust this value based on your header height */
+    right: 0;
+    width: 50%;
+    height: 30%;
+    border-radius: 20px;
+    background-color: black;
+    z-index: 1;
+    transition: all 0.5s ease-out;
+    opacity: 90%;
+    min-height: 150px; /* Increase min-height for more menu items */
+    overflow-y: auto; /* Add scrollbar for overflow content */
+  }
+  /* Display menu links when menu is open */
+  .menu-open.intro {
+    display: block; /* Display menu links when menu is open */
+  }
+  .intro ul{
+    padding-top: 2px;
+    padding: 10px;
+    list-style-type:none;
+    display: flex;
+    flex-direction:column ;
+  }
+  .hb {
+    background-color: black;
+    width: 30px;
+    margin: 0 auto;
+    display: block;
+  }
+  .intro ul li{
+    margin-bottom: 20px;
+  }
+  .intro ul li a {
+    font-size: 16px; /* Increase font size for better readability */
+    transition: color 0.3s ease; /* Add transition for smoother hover effects */
+  }
+  
+  .intro ul li a:hover {
+    color: #a970ff; /* Change color on hover */
+  }
+}
