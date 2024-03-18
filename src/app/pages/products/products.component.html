@@ -1,10 +1,28 @@
-<input type="text" [(ngModel)]="searchQuery" (input)="filterProducts()" placeholder="Search products...">
-<h2>Products</h2>
-<div class="products">
-  <div *ngFor="let p of filteredProducts" class="product">
-    <img [src]="p.thumbnail" [alt]="p.title" class="h-50 w-50">
-    <h3><a [routerLink]="'/product/' + p.id">{{ p.title }}</a></h3>
-    <p>Price: <strong>{{ p.price | currency:"INR" }}</strong></p>
-    <button (click)="add(p)" class="btn btn-secondary">Add to cart</button>
-  </div>
+<div class="container">
+    <div class="filterBtn">
+        <button (click)="showAll()">Show All</button>
+        <button (click)="filterAll($event)" *ngFor="let category of categories | keyvalue">{{ category.key }}</button>
+    </div>
+
+    <div class="allcards">
+        <div class="card" *ngFor="let p of products">
+            <img src={{p.thumbnail}} alt={{p.title}}>
+            <div class="card-body">
+                <a class="card-title" routerLink="/product/{{p.id}}">{{p.title}}</a>
+                <div class="avl">
+                    <span class="rating">{{p.rating}}<i class="fas fa-star"></i></span>
+                    <span>({{p.stock}})</span>
+                </div>
+                <div class="price">
+                    <span>{{p.price | currency}}</span>
+                    <span class="discnt">{{p.discountPercentage}}% off</span>
+                </div>
+            </div>
+            <div class="cartBtn">
+                <button (click)="addtocart(p)">Add to cart</button>
+                <button (click)="removecart(p.id)">Remove</button>
+            </div>
+        </div>
+
+    </div>
 </div>

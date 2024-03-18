@@ -1,8 +1,8 @@
-<header class="container-fluid bg-black d-flex justify-space-between text-white w-100 align-items-center" responsive>
-  <div>
-    <a routerLink="/"><img src="https://includeability.gov.au/sites/default/files/2021-08/Kmart_Flat_MASTERBRAND_CMYK_800.jpg" alt="" class="h-25 w-25"></a>
-  </div>
 
+<header class="container-fluid bg-black d-flex justify-space-between text-white w-100 align-items-center" [ngClass]="{ 'dark-mode': isDarkMode, 'light-mode': !isDarkMode }" responsive >
+  <div class="brand">
+    <a routerLink="/">Mkart</a>
+  </div>
   <div class="container">
     <input type="text" [(ngModel)]="searchQuery" (input)="searchProducts()" class="input" placeholder="Search products...">
     <button class="search__btn">

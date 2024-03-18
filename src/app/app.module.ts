@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { DarkModeComponent } from './pages/dark-mode/dark-mode.component';
 import { ResponsiveDirective } from './directives/responsive.directive'; // Import FormsModule
 import { ResponsiveService } from './ResponsiveService.service';
+
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, PrasadDirective, DarkModeComponent, ResponsiveDirective],
   imports: [

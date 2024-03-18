@@ -1,4 +1,4 @@
-import { Component, OnChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ApiService } from '../../services/api/api.service';
 import { Router } from '@angular/router';
 import { ResponsiveService } from '../../ResponsiveService.service';
@@ -8,7 +8,7 @@ import { ResponsiveService } from '../../ResponsiveService.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  isDarkMode = false;
+  @Input() isDarkMode:boolean = false;
   isMobile = false;
   isMenuOpen = false; // Add a variable to track the menu state
   searchQuery: string = '';
@@ -32,9 +32,12 @@ export class HeaderComponent {
   }
   onDarkModeChange(isDarkMode: boolean): void {
     this.isDarkMode = isDarkMode;
+    const header = document.querySelector('.container-fluid');
+    if (header) {
+      header.classList.toggle('dark-mode', this.isDarkMode);
+    }
   }
   closeMenu() :void{
     this.isMenuOpen = false; // Close the menu when a link is clicked
   }
-
 }

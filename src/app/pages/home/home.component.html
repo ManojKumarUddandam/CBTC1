@@ -1,1 +1,41 @@
-<p>home works!</p>
+<div class="slideshow-container">
+  <div *ngFor="let image of images; let i = index" class="mySlides fade" (click)="navigateToFilteredProducts(getCategoryName(i))">
+      <img [src]="image" style="width:100%">
+      <div class="text" [innerHTML]="getImageText(i)"></div>
+  </div>
+
+  <!-- Navigation arrows -->
+  <a class="prev" (click)="prevSlide()">&#10094;</a>
+  <a class="next" (click)="nextSlide()">&#10095;</a>
+</div>
+
+<!-- Additional text -->
+<div class="additional-text">
+  <div class="About">
+      <h2 style="color: rgb(154, 154, 219);">Mkart</h2>
+      <p>E-commerce is revolutionizing The way we all shop in India. Why do you want to hop from one store to another in search of the latest phone when you can find it on the Internet in a single click?
+        Not only mobiles. Mkart houses everything you can possibly imagine, from trending electronics like laptops,tablets,smartphones and home decoration appliances,we got them all covered. you can stay 
+        assured about finding them all here. This e-commerce never shuts down.
+      </p>
+      <p>what's more,with our year-round shopping festivals and events, our prices are irresistable. We're sure you'll find yourself picking up more than what you had in mind
+      </p>
+  </div><br>
+  <div class="emi">
+    <h2 style="color: rgb(154, 154, 219);">No Cost EMI</h2>
+    <p>In an attempt to make high-end products accessible to all,our No Cost EMI plan enables you to shop with us under EMI, without selling out any processing fee.Applicable on select mobiles,laptops,large 
+      and small appliances ,furniture,electronics and groceries.you can now shop without buring a hole in your pocket.Take a look ASAP! terms and conditions apply.
+    </p>
+  </div><br>
+  <div class="Buy">
+  <h2 style="color: rgb(154, 154, 219);">What can you buy from Mkart?</h2>
+  <h3 style="font-weight: lighter;text-decoration: underline;">Mobile phones</h3>
+  <p>From budget phones to state-of-the-art smartphones,we have mobile for everybody outthere.Whether you're looking for larger,full screens,powerpacked batteries,blazing fast-processors 
+    high-tech selfie cameras or just large internal space.
+  </p>
+  <h3 style="font-weight: lighter;text-decoration: underline;">Groceries</h3>
+  <p>
+    Launching into grocery vertical,Mkart introduces Supermart that is out to bring everyday essentials close to you.From pulses,spices and all.
+    we are happy to present everything you need to run a house.
+  </p>
+  </div>
+</div>

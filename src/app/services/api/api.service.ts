@@ -1,41 +1,59 @@
 import { Injectable } from '@angular/core';
-import {API_URL} from '../../environments/environments'
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { API_URL } from '../../environments/environments';
+import { BehaviorSubject, map } from 'rxjs';
+
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ApiService {
-  empty:any[]=[]
-  private cartSubject = new BehaviorSubject(0);
+  private cartSubject = new BehaviorSubject<number>(0);
   cartSubObs = this.cartSubject.asObservable();
-  private cartItemsSubject = new BehaviorSubject(this.empty);
-  cartItemsSubObs = this.cartSubject.asObservable();
-  constructor(private hc: HttpClient) {}
-  addValue(prod:Object) {
-    console.log('service called');
-    const c = this.cartSubject.getValue();
-    this.cartSubject.next(c + 1);
-    console.log(this.cartSubject.getValue());
-    const items = this.cartItemsSubject.getValue();
-    this.cartItemsSubject.next([ ...items, prod ])
-    console.log(this.cartItemsSubject.getValue())
+  private pageNameSource = new BehaviorSubject<string>('');
+  currentPageName = this.pageNameSource.asObservable();
+  private searchText = new BehaviorSubject<string>('');
+  searchTs = this.searchText.asObservable();
+
+  constructor(private hc:HttpClient) { }
+
+  updateCartCount(count: number) {
+    this.cartSubject.next(count);
+    console.log(count);
   }
-  getCount() {
-    return this.cartSubject.getValue();
+
+  getActivePage(pagename: string){
+    this.pageNameSource.next(pagename);
   }
-  getItems()
-  {
-    return this.cartItemsSubject.getValue();
+  sendSearchValue(searchString: string){
+    this.searchText.next(searchString);
   }
-  removeValue() {
-    const c = this.cartSubject.getValue();
-    this.cartSubject.next(c - 1);
-  }
-  getProducts() {
+  getProducts(){
     return this.hc.get(`${API_URL}`);
   }
-  getProduct(id: number) {
-    return this.hc.get(`${API_URL}/${id}`);
+  getProduct(id:number){
+    return this.hc.get(`${API_URL}/${id}`).pipe(
+      map((data: any) => {
+        if (Array.isArray(data)) {
+          return data.map((item: any) => ({ ...item, count: 1, isDisabled: false, isDisabled2: true }));
+        } else {
+          return { ...data, count: 1, isDisabled: false, isDisabled2: true };
+        }
+      })
+    );
   }
+  getCategoryProduct(cate:any){
+    return this.hc.get(`${API_URL}/category/${cate}`);
+  }
+  getFilterProduct(name:any){
+    return this.hc.get(`${API_URL}/search?q=${name}`);
+  }
+
+  addProductinDB(product: any){}
+  getItems() {
+    // You can implement your logic here to fetch items from the server or from local storage
+    // For example, if you are storing items in local storage, you can do:
+    const items = localStorage.getItem('items');
+    return items ? JSON.parse(items) : [];
+  }
+
 }

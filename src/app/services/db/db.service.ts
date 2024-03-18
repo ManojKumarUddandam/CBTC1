@@ -1,30 +1,26 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import {AngularFirestore} from '@angular/fire/compat/firestore'
+import { Users } from '../../model/users';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DbService {
 
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private afs:AngularFirestore) { }
 
-  // Example method to get data from the database
-  getData() {
-    return this.db.list('/path/to/data').valueChanges();
+  addUsers(users: Users){
+    return this.afs.collection('/Users').add(users);
   }
 
-  // Example method to write data to the database
-  writeData(data: any) {
-    return this.db.list('/path/to/data').push(data);
+  getUser(){
+    return this.afs.collection('/Users').snapshotChanges();
   }
 
-  // Example method to update data in the database
-  updateData(key: string, newData: any) {
-    return this.db.object('/path/to/data/' + key).update(newData);
+  getUserByEmail(email: string): Observable<any[]> {
+    return this.afs.collection('/Users', ref => ref.where('email', '==', email)).snapshotChanges();
   }
 
-  // Example method to delete data from the database
-  deleteData(key: string) {
-    return this.db.object('/path/to/data/' + key).remove();
-  }
 }

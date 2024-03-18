@@ -1,3 +1,42 @@
-<footer class="container-fluid bg-black">
-    <p class="text-center text-white">This site is copyrighted &copy; 2024</p>
+<footer class="container-fluid bg-black text-white" [ngClass]="{'dark-mode':isDarkMode}">
+    <div class="container">
+        <div class="row">
+            <!-- About Us Section -->
+            <div class="col-md-4">
+                <h5>About Us</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida risus magna.</p>
+            </div>
+            <!-- Quick Links Section -->
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Contact Us Section -->
+            <div class="col-md-4">
+                <div class="contact">
+                <h5>Contact Us</h5>
+                <address>
+                    123 Main Street<br>
+                    Hyderabad, Telangana ZIP:509001<br>
+                    Country:India<br>
+                    <abbr title="Phone">P:</abbr> 9390684297<br>
+                    <abbr title="Email">E:</abbr> <a href="mailto:umanojkumaru&#64;gmail.com">umanojkumaru&#64;gmail.com</a>
+                </address>
+            </div>
+            </div>
+        </div>
+    </div>
 </footer>
+<!-- Copyright Section -->
+<footer class="container-fluid bg-dark text-white py-3">
+    <div class="container text-center">
+        <p>This site is copyrighted &copy; 2024. All rights reserved.</p>
+    </div>
+</footer>
+
+
