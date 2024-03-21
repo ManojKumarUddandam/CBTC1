@@ -7,26 +7,30 @@
   height: 80px;
   color: white;
 }
-header{
+
+header {
   background-color: white;
   color: black;
 }
+
 /* Dark mode styles */
- header .dark-mode {
+header.dark-mode {
   background-color: black;
   color: white;
 }
+
 .brand a {
-  font-family: 'Arial', sans-serif; /* Use a font suitable for your brand */
-  font-size: 26px; /* Adjust the font size as needed */
-  font-weight: bold; /* Make the text bold */
-  color:red; /* Adjust the color to match your brand */
-  text-decoration: none; /* Remove underline */
-  text-transform: uppercase; /* Convert text to uppercase */
-  letter-spacing: 2px; /* Add letter spacing */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a subtle text shadow */
+  font-family: 'Arial', sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  color: red;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   padding-left: 15px;
 }
+
 .container-fluid img {
   height: 25px;
   width: 25px;
@@ -35,7 +39,7 @@ header{
 
 ul {
   display: flex;
-  justify-content: flex-end; /* Adjusted to align items to the end */
+  justify-content: flex-end;
   align-items: center;
   list-style: none;
 }
@@ -43,7 +47,7 @@ ul {
 ul li a {
   color: white;
   text-decoration: none;
-  padding: 0 15px; /* Added padding to improve spacing */
+  padding: 0 15px;
 }
 
 .cart-icon {
@@ -78,9 +82,11 @@ ul li a {
   align-items: center;
   height: 35px;
 }
-.cart-icon{
+
+.cart-icon {
   padding-left: 15px;
 }
+
 .input {
   max-width: 190px;
   height: 100%;
@@ -92,10 +98,9 @@ ul li a {
   color: #fff;
   padding: 7px 10px;
   border: 2px solid transparent;
-  border-top-left-radius: 7px;
-  border-bottom-left-radius: 7px;
+  border-radius: 7px;
   margin-right: 1px;
-  transition: all .2s ease;
+  transition: border .2s ease;
 }
 
 .input:hover {
@@ -125,49 +130,46 @@ ul li a {
 }
 
 .hamburger-menu {
-  display: none; /* Hide hamburger icon by default */
+  display: none;
   cursor: pointer;
 }
+
 /* Mobile styles */
 @media screen and (max-width: 768px) {
   .container-fluid {
-    height: 60px; /* Reduce height for mobile devices */
+    height: 60px;
     width: 100%;
   }
 
-  .brand a{
-  padding-left: 140px;
-  font-size: small;
+  .brand a {
+    padding-left: 140px;
+    font-size: small;
   }
+
   ul {
-    justify-content: center; /* Center-align navigation items for mobile devices */
+    justify-content: center;
   }
 
   ul li a {
-    padding: 0 10px; /* Reduce padding for mobile devices */
+    padding: 0 10px;
   }
 
   .btn-primary {
-    margin-right: 20px; /* Reduce margin for mobile devices */
+    margin-right: 20px;
   }
 
   .input {
-    max-width: 140px; /* Reduced max-width for mobile devices */
-    font-size: 12px; /* Reduced font size for mobile devices */
-    padding: 5px 8px; /* Reduced padding for mobile devices */
+    max-width: 140px;
+    font-size: 12px;
+    padding: 5px 8px;
   }
 
   .search__btn {
-    width: 15px; /* Reduced width for mobile devices */
+    width: 15px;
   }
 
-  /* Add styles for the active state of the menu */
-  .hamburger-menu.active + .menu-open {
-    visibility: visible;
-    opacity: 1;
-  }
   .hamburger-menu {
-    display: block; /* Display the hamburger icon on mobile */
+    display: block;
     cursor: pointer;
     position: absolute;
     top: 20px;
@@ -175,11 +177,10 @@ ul li a {
     margin-right: 270px;
   }
 
-  /* Hide menu links by default */
   .intro {
     display: none;
     position: absolute;
-    top: 60px; /* Adjust this value based on your header height */
+    top: 60px;
     right: 0;
     width: 50%;
     height: 30%;
@@ -188,52 +189,56 @@ ul li a {
     z-index: 1;
     transition: all 0.5s ease-out;
     opacity: 90%;
-    min-height: 150px; /* Increase min-height for more menu items */
-    overflow-y: auto; /* Add scrollbar for overflow content */
+    min-height: 150px;
+    overflow-y: auto;
   }
-  /* Display menu links when menu is open */
+
   .menu-open.intro {
-    display: block; /* Display menu links when menu is open */
+    display: block;
     margin-right: 150px;
   }
-  .intro ul{
+
+  .intro ul {
     padding-top: 2px;
     padding: 10px;
-    list-style-type:none;
+    list-style-type: none;
     display: flex;
-    flex-direction:column ;
+    flex-direction: column;
   }
+
   .hb {
     background-color: black;
     width: 30px;
     margin: 0 auto;
     display: block;
-    
   }
-  .intro ul li{
+
+  .intro ul li {
     margin-bottom: 10px;
   }
+
   .intro ul li a {
-    font-size: 16px; /* Increase font size for better readability */
-    transition: color 0.3s ease; /* Add transition for smoother hover effects */
+    font-size: 16px;
+    transition: color 0.3s ease;
   }
-  
+
   .intro ul li a:hover {
-    color: #a970ff; /* Change color on hover */
+    color: #a970ff;
   }
+
   .search__btn {
     margin-right: 67px;
   }
+
   .container {
-    display: none; /* Hide the search input in header on mobile */
+    display: none;
   }
 
-  /* Show the search button at the top of the home page in mobile mode */
   #search-button {
     display: block;
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 999; /* Ensure it's above other elements */
+    z-index: 999;
   }
 }

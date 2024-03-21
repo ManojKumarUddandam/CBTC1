@@ -26,22 +26,3 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Styles for the orders section */
-.orders {
-  margin-top: 30px;
-}
-
-/* Styles for individual orders */
-.or {
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.or p {
-  margin: 0;
-  font-size: 18px;
-  color: #333;
-}

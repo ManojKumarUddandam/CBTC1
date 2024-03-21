@@ -16,7 +16,7 @@ import { DarkModeComponent } from './pages/dark-mode/dark-mode.component';
 import { ResponsiveDirective } from './directives/responsive.directive'; // Import FormsModule
 import { ResponsiveService } from './ResponsiveService.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, PrasadDirective, DarkModeComponent, ResponsiveDirective],
   imports: [

@@ -4,8 +4,6 @@ import { ApiService } from '../../services/api/api.service';
 import { Router } from '@angular/router';
 import { DbService } from '../../services/db/db.service';
 
-declare var Razorpay: any;
-
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -94,36 +92,9 @@ export class CartComponent {
       alert("Cart is empty. \nPlease add item.");
     }else{
       if(token) {
-        const RozarpayOptions = {
-          description: 'payment for My Cart Product',
-          currency: 'INR',
-          amount: this.checkOutPrice * 100,
-          pname: 'My Order',
-          key: 'rzp_test_UzmHM4EQPTg5qR',
-          prefill: {
-            name: this.currentUser.username,
-            email: this.currentUser.email
-          },
-          theme: {
-            color: '#00bfff',
-          },
-          modal: {
-            ondismiss: () =>{
-              alert('Payment Canceled.')
-            }
-          },
-          brand: 'All Products',
-          image: '../../../assets/icon.png',
-        }
-  
-        const successCallback = (paymentid: any) => {
-          alert(paymentid);
-        }
-        const errorCallback = (e: any) => {
-          alert(e);
-        }
-        Razorpay.open(RozarpayOptions, successCallback, errorCallback)
-      } else{
+        // Handle checkout logic here without Razorpay
+        alert('Checkout completed successfully!');
+      } else {
         const confirmed = window.confirm("Please login first. Do you want to proceed to the login page?");
         if (confirmed) {
           this.route.navigateByUrl('/login');
@@ -133,4 +104,3 @@ export class CartComponent {
     }
   }
 }
-

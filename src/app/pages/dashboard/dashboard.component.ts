@@ -10,11 +10,8 @@ import { ApiService } from '../../services/api/api.service';
 export class DashboardComponent {
   name!: any;
   myOrders: any;
-  constructor(private auth:AuthService,private api:ApiService)
+  constructor(private auth:AuthService)
   {
-    this.name = JSON.parse(localStorage.getItem('data') as string).value;
-    
-   this.myOrders = this.api.getItems();
   }
   logout()
   {
