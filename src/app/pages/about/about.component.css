@@ -1,0 +1,132 @@
+/* about.component.css */
+
+/* Style for the About section */
+/* General styling */
+/* About.component.css */
+
+/* General styling */
+:root {
+    --text-color: black; /* Default text color */
+    --background-color: white; /* Default background color */
+}
+
+/* For dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: white;
+        --background-color: #333; /* Dark background color */
+    }
+}
+
+/* General styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px; /* Adjusted padding for better spacing */
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Section titles */
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 15px; /* Improved spacing */
+}
+
+/* Section descriptions */
+.section-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 20px; /* Improved spacing */
+}
+
+/* Images */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* About Us section */
+#about {
+    padding: 50px 0;
+}
+
+.intro {
+    margin-bottom: 30px;
+}
+
+/* Team member images */
+.founder-story img {
+    max-width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Team member details */
+.team-member {
+    margin-bottom: 40px; /* Increased margin for better separation */
+}
+
+.team-member h4 {
+    font-size: 20px; /* Increased font size for better readability */
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 10px; /* Improved spacing */
+}
+
+.team-member p {
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 10px; /* Improved spacing */
+}
+
+/* Testimonials */
+.testimonial {
+    margin-bottom: 40px; /* Increased margin for better separation */
+}
+
+.testimonial blockquote {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 20px; /* Improved spacing */
+}
+
+.testimonial blockquote p {
+    margin-bottom: 10px;
+}
+
+.testimonial blockquote cite {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+/* Contact Info */
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 8px; /* Improved spacing */
+}
+
+.contact-info ul li:before {
+    content: "\2022";
+    margin-right: 10px;
+}
+/* CSS for team member images */
+@media (max-width: 768px) {
+    .team-member {
+        margin-bottom: 20px; /* Decrease space between team members on smaller screens */
+    }
+}

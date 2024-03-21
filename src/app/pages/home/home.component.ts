@@ -8,13 +8,17 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements AfterViewInit {
-  images: string[] = ['assets/laptop.jpg', 'assets/mobiles.jpg','assets/perfume1.jpg','assets/homedecor.jpg','assets/skincare.jpg']; // Add more image URLs as needed
+  images: string[] = ['assets/laptop.jpg', 'assets/mobiles.jpg', 'assets/perfume1.jpg', 'assets/homedecor.jpg', 'assets/skincare.jpg'];
   slideIndex = 0;
+  searchQuery: string = '';
+  slides: HTMLElement[] = []; // Initialize slides array
 
-  constructor(private router: Router,private sanitizer: DomSanitizer) {}
+  constructor(private router: Router, private sanitizer: DomSanitizer) {}
+
   ngAfterViewInit() {
+    this.slides = Array.from(document.querySelectorAll('.mySlides') as NodeListOf<HTMLElement>);
     this.showSlide(this.slideIndex);
-    setInterval(() => this.nextSlide(), 6000); // Automatic scrolling every 5 seconds
+    setInterval(() => this.nextSlide(), 6000);
   }
 
   prevSlide() {
@@ -26,15 +30,17 @@ export class HomeComponent implements AfterViewInit {
   }
 
   showSlide(index: number) {
-    const slides = Array.from(document.querySelectorAll('.mySlides') as NodeListOf<HTMLElement>);
-    if (index >= slides.length) { this.slideIndex = 0; }
-    if (index < 0) { this.slideIndex = slides.length - 1; }
-    for (const slide of slides) { slide.style.display = 'none'; }
-    slides[this.slideIndex].style.display = 'block';
+    console.log('Slides:', this.slides); // Log slides array
+    if (index >= this.slides.length) { this.slideIndex = 0; }
+    if (index < 0) { this.slideIndex = this.slides.length - 1; }
+    for (const slide of this.slides) { slide.style.display = 'none'; }
+    this.slides[this.slideIndex].style.display = 'block';
   }
+
   navigateToFilteredProducts(category: string) {
     this.router.navigate(['/products'], { queryParams: { category: category } });
   }
+
   getCategoryName(index: number): string {
     switch (index) {
       case 0: return 'laptops';
@@ -47,7 +53,6 @@ export class HomeComponent implements AfterViewInit {
   }
 
   getImageText(index: number): SafeHtml {
-    // Define text corresponding to each image index
     let imageText: string;
 
     switch (index) {
@@ -70,5 +75,9 @@ export class HomeComponent implements AfterViewInit {
         imageText = '';
     }
     return this.sanitizer.bypassSecurityTrustHtml(imageText);
+  }
+  searchProducts(): void {
+    // Navigate to the products page and pass the search query as a query parameter
+    this.router.navigate(['/products'], { queryParams: { q: this.searchQuery } });
   }
 }

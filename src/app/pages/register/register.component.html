@@ -1,3 +1,4 @@
+<div class="form-container">
 <form #fm="ngForm" (ngSubmit)="submit(un,em,pwd,fm)">
     <input type="text" name="username" placeholder="Enter the name" ngModel #un="ngModel" required><br>
     <div class="error" *ngIf="(fm.submitted||un.touched) && un.errors?.['required']">Username is required.please Enter</div>
@@ -12,3 +13,4 @@
     <button type="submit">click me</button>
     <p>Already have an account,signin <a routerLink="/login">Here</a></p>
 </form>
+</div>

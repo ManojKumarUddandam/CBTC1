@@ -33,12 +33,12 @@
     <li><a routerLink="/products" class="text-white text-decoration-none">Products</a></li>
     <li><a routerLink="/contact" class="text-white text-decoration-none">Contact</a></li>
     <app-dark-mode (darkModeChange)="onDarkModeChange($event)" padding-right:1px></app-dark-mode>
-    <div class="cart-icon">
-      <a routerLink="cart"><i class="bi bi-cart text-white"></i></a>
-      <span id="count">{{ c }}</span>
-    </div> 
   </ul>
 </div>
+<div class="cart-icon">
+  <a routerLink="cart"><i class="bi bi-cart text-white"></i></a>
+  <span id="count">{{ c }}</span>
+</div> 
   <div>
     <button class="btn btn-primary">
       <a routerLink="/login" class="text-white text-decoration-none">Login</a>

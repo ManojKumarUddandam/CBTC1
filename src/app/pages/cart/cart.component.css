@@ -1,0 +1,94 @@
+/* Common styles */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Style for the main cart container */
+.main-cart {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(#212121, #212121) padding-box,
+                linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;;
+}
+
+/* Style for the table headers */
+.main-cart th {
+    text-align: left;
+    padding: 10px;
+    background-color: black; /* Light gray background for table headers */
+}
+
+/* Style for each row in the table */
+.main-cart td {
+    padding: 10px;
+}
+
+/* Style for the cart item image */
+.cart-info img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+/* Style for the cart item title */
+.cart-info p {
+    font-weight: bold;
+    color: white;
+}
+
+/* Style for the price */
+.cart-info small {
+    color: white;
+}
+
+/* Style for the buttons to increase or decrease quantity */
+.qunt button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Disable styling for disabled buttons */
+.qunt button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Style for the total price section */
+.total-price {
+    margin-top: 20px;
+}
+
+/* Style for the checkout button */
+.btns button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Hover effect for the checkout button */
+.btns button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+    .main-cart th, .main-cart td {
+        font-size: 12px;
+    }
+}
+
+

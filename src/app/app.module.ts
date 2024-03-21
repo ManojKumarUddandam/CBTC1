@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { DarkModeComponent } from './pages/dark-mode/dark-mode.component';
 import { ResponsiveDirective } from './directives/responsive.directive'; // Import FormsModule
 import { ResponsiveService } from './ResponsiveService.service';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, PrasadDirective, DarkModeComponent, ResponsiveDirective],
   imports: [
@@ -24,10 +25,11 @@ import { ResponsiveService } from './ResponsiveService.service';
     MaterialModule,
     PagesModule,
     HttpClientModule,
+    FormsModule,
     AngularFireAuthModule,
     AngularFireModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    FormsModule
+    FontAwesomeModule
   ],
   providers: [ResponsiveService],
   bootstrap: [AppComponent],

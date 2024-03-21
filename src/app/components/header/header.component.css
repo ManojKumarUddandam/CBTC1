@@ -7,8 +7,12 @@
   height: 80px;
   color: white;
 }
+header{
+  background-color: white;
+  color: black;
+}
 /* Dark mode styles */
-.container-fluid.dark-mode {
+ header .dark-mode {
   background-color: black;
   color: white;
 }
@@ -128,10 +132,11 @@ ul li a {
 @media screen and (max-width: 768px) {
   .container-fluid {
     height: 60px; /* Reduce height for mobile devices */
+    width: 100%;
   }
 
   .brand a{
-  padding-left: 1px;
+  padding-left: 140px;
   font-size: small;
   }
   ul {
@@ -143,9 +148,7 @@ ul li a {
   }
 
   .btn-primary {
-    margin-right: 30px; /* Reduce margin for mobile devices */
-    padding-left: 1px;
-    padding-right: 1px;
+    margin-right: 20px; /* Reduce margin for mobile devices */
   }
 
   .input {
@@ -169,7 +172,7 @@ ul li a {
     position: absolute;
     top: 20px;
     right: 20px;
-    margin-right: 50px;
+    margin-right: 270px;
   }
 
   /* Hide menu links by default */
@@ -191,6 +194,7 @@ ul li a {
   /* Display menu links when menu is open */
   .menu-open.intro {
     display: block; /* Display menu links when menu is open */
+    margin-right: 150px;
   }
   .intro ul{
     padding-top: 2px;
@@ -219,5 +223,17 @@ ul li a {
   }
   .search__btn {
     margin-right: 67px;
+  }
+  .container {
+    display: none; /* Hide the search input in header on mobile */
+  }
+
+  /* Show the search button at the top of the home page in mobile mode */
+  #search-button {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999; /* Ensure it's above other elements */
   }
 }

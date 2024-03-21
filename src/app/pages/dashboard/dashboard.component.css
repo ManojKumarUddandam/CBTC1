@@ -1,23 +1,47 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth/auth.service';
-import { ApiService } from '../../services/api/api.service';
+/* Styles for the container */
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
 
-@Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
-})
-export class DashboardComponent {
-  name!: any;
-  myOrders: any;
-  constructor(private auth:AuthService,private api:ApiService)
-  {
-    this.name = JSON.parse(localStorage.getItem('data') as string).value;
-    
-   this.myOrders = this.api.getItems();
-  }
-  logout()
-  {
-    this.auth.logout()
-  }
+/* Styles for the greeting heading */
+h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Styles for the logout button */
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Styles for the orders section */
+.orders {
+  margin-top: 30px;
+}
+
+/* Styles for individual orders */
+.or {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.or p {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
 }

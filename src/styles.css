@@ -3,6 +3,8 @@
 
 @import url('../node_modules/bootstrap-icons/font/bootstrap-icons.css');
 
+
+
 body.dark-mode {
     background-color: #1a1a1a;
     color: #fff;

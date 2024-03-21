@@ -80,41 +80,108 @@
   margin-right: 30px;
   margin-bottom: 40px;
 }
+.mobile-search-container {
+  display: none;
+}
+/* Mobile styles for slideshow */
 /* Mobile styles for slideshow */
 @media screen and (max-width: 768px) {
+  /* Adjust image styling */
   .mySlides img {
     margin-left: 6px;
     margin-top: 2px;
     height: 400px; /* Adjust the height of images for mobile devices */
+    object-fit: cover; /* Ensure images maintain aspect ratio */
   }
 
+  /* Display the mobile search container */
+  .mobile-search-container {
+    display: flex;
+    margin-top: 10px; /* Add margin for spacing */
+  }
+
+  /* Search button styles */
+  .mobile-search-container .search__btn {
+    border: none;
+    cursor: pointer;
+    background-color: rgba(42, 42, 45, 1);
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    max-height: 100%;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Add transition for hover effect */
+  }
+
+  /* Hover effect for search button */
+  .mobile-search-container .search__btn:hover {
+    background-color: rgba(54, 54, 56, 1);
+  }
+
+  /* Input field styles */
+  .mobile-search-container .input {
+    max-width: 390px;
+    width: 290px;
+    height: 100%;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #53535f;
+    caret-color: #f7f7f8;
+    color: #fff;
+    padding: 7px 10px;
+    border: 2px solid transparent;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    margin-right: 1px;
+    margin-left: 5px;
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Add transitions */
+  }
+
+  /* Hover effect for input field */
+  .mobile-search-container .input:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+
+  /* Focus effect for input field */
+  .mobile-search-container .input:focus {
+    border-color: #a970ff;
+    background-color: #0e0e10;
+  }
+
+  /* Reduce font size and adjust padding/margins for navigation buttons */
   .prev, .next {
-    font-size: 14px; /* Reduce font size for navigation buttons on mobile */
-    padding: 8px; /* Adjust padding for navigation buttons on mobile */
-    margin-top: -16px; /* Adjust margin-top for navigation buttons on mobile */
+    font-size: 14px;
+    padding: 8px;
+    margin-top: -16px;
   }
 
+  /* Adjust text padding and margins */
   .text {
-    padding: 10px; /* Adjust padding for text on mobile */
-    margin-bottom: 80px; /* Adjust margin-bottom for text on mobile */
-    margin-left: 10px; /* Adjust margin-left for text on mobile */
-    margin-right: 10px; /* Adjust margin-right for text on mobile */
+    padding: 10px;
+    margin-bottom: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
-  
+
+  /* Adjust font sizes and margins for text elements */
   .text h1 {
-    font-size: 18px; /* Adjust font size for heading on mobile */
-    margin-bottom: 8px; /* Adjust margin-bottom for heading on mobile */
+    font-size: 18px;
+    margin-bottom: 8px;
   }
 
   .text p {
-    font-size: 14px; /* Adjust font size for paragraphs on mobile */
-    margin: 3px 0; /* Adjust margin for paragraphs on mobile */
+    font-size: 14px;
+    margin: 3px 0;
   }
 
+  /* Adjust margins for additional text */
   .additional-text {
-     /* Adjust margin-top for additional text on mobile */
-    margin-left: 10px; /* Adjust margin-left for additional text on mobile */
-    margin-right: 10px; /* Adjust margin-right for additional text on mobile */
-    margin-bottom: 10px; /* Adjust margin-bottom for additional text on mobile */
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 }
+

@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" [ngClass]="{'dark-mode':isDarkMode}">
     <div class="filterBtn">
-        <button (click)="showAll()">Show All</button>
-        <button (click)="filterAll($event)" *ngFor="let category of categories | keyvalue">{{ category.key }}</button>
+        <button class="button  button-content" (click)="showAll()">Show All</button>
+        <button class="button  button-content" (click)="filterAll($event)" *ngFor="let category of categories | keyvalue">{{ category.key }}</button>
     </div>
 
     <div class="allcards">

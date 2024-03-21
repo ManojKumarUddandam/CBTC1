@@ -9,7 +9,7 @@ declare var Razorpay: any;
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
   title = 'Cart';
@@ -24,6 +24,7 @@ export class CartComponent {
     if (storedProducts) {
       this.productLength = JSON.parse(storedProducts);
     }
+    
     console.log(this.productLength);
 
     const userEmail:any = localStorage.getItem('currentUser');
@@ -40,7 +41,7 @@ export class CartComponent {
     if (item.count >= 10) {
       item.isDisabled=true;
     }else {
-      item.count++;
+      item.count = Number(item.count) + 1; // Ensure item.count is converted to a number
       item.isDisabled2=false;
     }
     this.saveToLocalStorage();
@@ -50,7 +51,7 @@ export class CartComponent {
     if (item.count <= 1) {
       item.isDisabled2=true;
     }else {
-      item.count--;
+      item.count = Number(item.count) - 1; // Ensure item.count is converted to a number
       item.isDisabled=false;
     }
     this.saveToLocalStorage();
@@ -132,3 +133,4 @@ export class CartComponent {
     }
   }
 }
+
